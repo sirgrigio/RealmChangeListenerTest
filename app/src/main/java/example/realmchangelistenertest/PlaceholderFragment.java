@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.Random;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -56,7 +58,7 @@ public class PlaceholderFragment extends Fragment implements PostItem.PostItemLi
         mFastItemAdapter.withOnClickListener(new FastAdapter.OnClickListener<PostItem>() {
             @Override
             public boolean onClick(View v, IAdapter<PostItem> adapter, PostItem item, int position) {
-                Post modifiedPost = new Post(1, "Post1 " + Math.random());
+                Post modifiedPost = new Post(1, "Post1 " + new Random().nextInt());
                 domainController.save(modifiedPost); // this should trigger the RealmChangeListener
                 return true;
             }
