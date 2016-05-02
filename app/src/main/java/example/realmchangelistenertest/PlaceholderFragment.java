@@ -75,7 +75,7 @@ public class PlaceholderFragment extends Fragment implements PostItem.PostItemLi
     public void onTitleChanged(PostItem item) {
         int position = mFastItemAdapter.getAdapterPosition(item);
         if (position >= 0) {
-            mFastItemAdapter.notifyItemChanged(position);
+            mFastItemAdapter.notifyAdapterItemChanged(position);
         }
     }
 }
